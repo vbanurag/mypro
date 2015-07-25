@@ -1,0 +1,53 @@
+<head>
+<body>
+
+<p> aburajdgejwv gedgwejgui gewgdf weg</p>
+
+{{ hval }}
+
+<br>
+{% for i in writer %}
+{{i.name}} , {{i.book}}
+{{i.langs.lang_name}}, {{i.langs.score}} <br>
+{% endfor %}
+
+<head>
+{% for i in writer %}
+<h1>{{i.langs.lang_name}}</h1>
+{% endfor %}
+</head>
+
+<br>
+<h> Student Description </h><br>
+<h>-------------------------------</h><br>
+
+{% for i in stu_val %}
+{{i.stu_name}} , {{i.stu_course}}   {{i.stu_des}}</br>
+{% endfor %}
+
+<h> Student Description </h><br>
+<h>-------------------------------</h><br>
+
+{% for i in st %}
+{{i.name}} , {{i.email}}   {{i.DOB}} {{i.phone}}</br>
+{% endfor %}
+<br>
+
+{% for i in ac %}
+
+ <img src="/media/{{i.photo}}" width='400'/> , {{i.profession}}
+
+{% endfor %}
+
+
+
+
+
+
+{% for item in lang %}
+	{% if forloop.item == 'c' %}
+		<b> {{item}} </b></br>
+	{% else %}
+		{{forloop.counter}}. {{item}} </br>
+	{% endif %}
+{% endfor %}

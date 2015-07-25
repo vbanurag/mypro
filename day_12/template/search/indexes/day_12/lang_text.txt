@@ -1,0 +1,2 @@
+{{object.lang_name}}
+{{object.score}}
