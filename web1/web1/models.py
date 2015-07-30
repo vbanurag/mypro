@@ -66,4 +66,13 @@ class project_research(models.Model):
 	project_Divison=models.CharField(max_length=15, null=False, blank=False)
 
 
+#expert panel contact form
+
+class expert_panel(models.Model):
+	name=models.CharField(max_length=50, null=False, blank=False)
+	email=models.EmailField()
+	subject=models.CharField(max_length=50, null=False, blank=False)
+	message=models.CharField(max_length=2000, null=False, blank=False)
+
+
 

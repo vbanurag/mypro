@@ -43,9 +43,13 @@ class project_undergrad_admin(admin.ModelAdmin):
 class project_research_admin(admin.ModelAdmin):
 	list_display=['project_Divison']
 
+class expert_panel_admin(admin.ModelAdmin):
+	list_display=['name', 'subject']
+
 
 
 admin.site.register(Enquiry,Enquiry_admin)
+admin.site.register(expert_panel, expert_panel_admin)
 
 
 admin.site.register(user_reg, user_reg_admin)

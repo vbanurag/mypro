@@ -1103,6 +1103,19 @@ textarea {
   color: #fff;
 }
 
+.input-xlarge_select{
+  padding: 10px;
+  border: 1px solid #e2e2e2;
+  width: 100%;
+  margin-top: 15px;
+  font-size: 13px;
+  margin-bottom: 15px;
+  font-style: italic;
+  font-weight: 300;
+  color: #aaa;
+  outline: none;
+}
+
 /*-- End Latest Posts --*/
 
 

@@ -1,13 +1,13 @@
 ﻿from django.template import RequestContext 
 from django.shortcuts import render_to_response
 from django.db import models
-#from new1.models import lang
-#from new1.models import stu
-#from new1.models import writ, students
 from web1.models import *
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login ,logout
 from django.http import HttpResponse
+
+
+#home page of website
 
 def home(request):
 	ctx=RequestContext(request)
@@ -17,23 +17,30 @@ def home(request):
 	return response
 
 
-def project(request):
-	ctx = RequestContext(request)
-	temp_name ="project.html"
-	response = render_to_response(temp_name, {} ,ctx)
+# expert panel of page
+
+def contact_us(request):
+	if request.method=="POST":
+		name=request.POST.get("name")
+		email=request.POST.get("email")
+		subject=request.POST.get("subject")
+		message=request.POST.get("message")
+		print name, email, subject, message
+		
+		e_p=expert_panel()
+
+		e_p.name=name
+		e_p.email=email
+		e_p.subject=subject
+		e_p.message=message
+		e_p.save()
+		temp_name="contact-us.html"
+	else: 
+		temp_name="contact-us.html"
+	ctx=RequestContext(request)
+	response = render_to_response(temp_name,locals(),ctx)
 	return response
 
-def aboutus(request):
-	ctx=RequestContext(request)
-	temp_name="about.html"
-	response= render_to_response(temp_name,{},ctx)
-	return response
-
-def blog(request):
-	ctx=RequestContext(request)
-	temp_name="blog.html"
-	response= render_to_response(temp_name,{},ctx)
-	return response
 
 
 def foer(request):
@@ -62,57 +69,14 @@ def foer(request):
 	response = render_to_response(temp_name,locals(),ctx)
 	return response
 
-def forms(request):
-	ctx=RequestContext(request)
-	temp_name="forms.html"
-	response = render_to_response(temp_name,locals(),ctx)
-	return response
 
-def formsubmit(request):
-	if request.method=="POST":
-		name=request.POST.get("name")
-		email=request.POST.get("email")
-		phone=request.POST.get("phone")
-		query=request.POST.get("query")
-		print name, email, phone, query
-		e=Enquiry()
-		e.name=name
-		e.email=email
-		e.phone=phone
-		e.query=query
-		e.save()
-		temp_name="formsubmit.html"
-	else:
-		temp_name="forms.html"
-	ctx=RequestContext(request)
-	response = render_to_response(temp_name,locals(),ctx)
-	return response
 
-def form1(request):
-	ctx=RequestContext(request)
-	temp_name="form1.html"
-	response = render_to_response(temp_name,locals(),ctx)
-	return response
 
-def formsubmit1(request):
-	if request.method=="POST":
-		course=request.POST.get("course")
-		idea=request.POST.get("idea")
-		assit=request.POST.get("assit")
-		fileupload=request.POST.get("fileupload")
-		print course, idea, assit, fileupload
-		f=feedback()
-		f.course=course
-		f.idea=idea
-		f.assit=assit
-		f.fileupload=fileupload
-		f.save()
-		temp_name="formsubmit1.html"
-	else: 
-		temp_name="form1.html"
-	ctx=RequestContext(request)
-	response = render_to_response(temp_name,locals(),ctx)
-	return response
+
+
+
+
+#login portal of page
 
 def login_project(request):
 	if request.method=="POST":
@@ -193,6 +157,12 @@ def user_signup(request):
 	return response
 
 
+def user_page(request):
+	ctx=RequestContext(request)
+	temp_name="user.html"
+	response= render_to_response(temp_name,{},ctx)
+	return response
+
 
 def signup(request):
 	ctx=RequestContext(request)
@@ -200,12 +170,11 @@ def signup(request):
 	response = render_to_response(temp_name,locals(),ctx)
 	return response
 
+#End of login project
 
 
-def display(request, myval):
-	return HttpResponse(myval)
 
-
+# creative form of page
 
 def battijalao_form(request):
 	if request.method=="POST":
@@ -267,6 +236,18 @@ def helpinghand_form(request):
 	response = render_to_response(temp_name,locals(),ctx)
 	return response
 
+# end of form
+
+#project categories views
+
+
+def project(request):
+	ctx = RequestContext(request)
+	temp_name ="project.html"
+	response = render_to_response(temp_name, {} ,ctx)
+	return response
+
+
 def project_bsc(request):
 	ctx=RequestContext(request)
 	temp_name="project_bsc.html"
@@ -274,14 +255,14 @@ def project_bsc(request):
 	pro_bsc=project_undergrad.objects.filter(project_Divison="B.Sc")
 	print pro
 	print pro_bsc
-	response= render_to_response(temp_name,{},ctx)
+	response= render_to_response(temp_name,locals(),ctx)
 	return response
 
 def project_btech(request):
 	ctx=RequestContext(request)
 	temp_name="project_btech.html"
 	pro=all_project.objects.all()
-	pro_btech=project_undergrad.objects.filter(project_Divison="B.TECH")
+	pro_btech=project_undergrad.objects.filter(project_Divison="B.Tech")
 	print pro
 	print pro_btech
 	response= render_to_response(temp_name,locals(),ctx)
@@ -309,9 +290,26 @@ def project_mca(request):
 
 def project_desc(request, myvalue):
 	ctx=RequestContext(request)
-	pro=all_project.objects.all()
 	pro_mca=project_postgrad.objects.filter(id=myvalue)
-	print pro
+	
+	temp_name="project_desc.html"
+	
+	response= render_to_response(temp_name,locals(),ctx)
+	return response
+
+def project_desc_undergrad(request, myvalue):
+	ctx=RequestContext(request)
+	pro_mca=project_undergrad.objects.filter(id=myvalue)
+	
+	temp_name="project_desc.html"
+	
+	response= render_to_response(temp_name,locals(),ctx)
+	return response
+
+def project_desc_ri(request, myvalue):
+	ctx=RequestContext(request)
+	pro_mca=project_research.objects.filter(id=myvalue)
+	
 	temp_name="project_desc.html"
 	
 	response= render_to_response(temp_name,locals(),ctx)
@@ -321,9 +319,9 @@ def project_res(request):
 	ctx=RequestContext(request)
 	temp_name="project_res.html"
 	pro=all_project.objects.all()
-	pro_res=project_research.objects.filter(p_id=myvalue)
+	pro_mca=project_research.objects.filter(project_Divison="R&I")
 	print pro
-	print pro_res
+	print pro_mca
 	response= render_to_response(temp_name,locals(),ctx)
 	return response
 
@@ -337,11 +335,7 @@ def project_mtech(request):
 	response= render_to_response(temp_name,locals(),ctx)
 	return response
 
-def user_page(request):
-	ctx=RequestContext(request)
-	temp_name="user.html"
-	response= render_to_response(temp_name,{},ctx)
-	return response
+
 
 
 #def project_display(request, myvalue):

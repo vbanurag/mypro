@@ -39,8 +39,8 @@ http://www.templatemo.com/preview/templatemo_417_grill
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="home-account">
-                                    <a href="{{YUM}}login.html">Login</a>
-                                    <a href="{{YUM}}signup.html">Register</a>
+                                    <a href="/login_project">Login</a>
+                                    <a href="/signup">Register</a>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -57,22 +57,22 @@ http://www.templatemo.com/preview/templatemo_417_grill
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="logo">
-                                    <a href="{{YUM}}#"><img src="{{YUM}}images/logo_new.png" title="Student Idea" alt="" ></a>
+                                    <a href="/"><img src="{{YUM}}images/logo_new.png" title="Student Idea" alt="" ></a>
                                 </div>
                             </div>
                             <div class="col-md-7">
                                 <div class="main-menu">
                                     <ul>
-                                        <li><a href="{{YUM}}index.html">Home</a></li>
-                                        <li><a href="{{YUM}}project.html">Project</a></li>
-                                        <li><a href="{{YUM}}#">Batti Jalao !!</a></li>
-                                        <li><a href="{{YUM}}helpinghand.html">Helping Hand</a></li>
-                                        <li><a href="{{YUM}}contact-us.html">Expert Panel</a></li>
+                                        <li><a href="/">Home</a></li>
+                                        <li><a href="/project">Project</a></li>
+                                        <li><a href="/battijalao">Batti Jalao !!</a></li>
+                                        <li><a href="/helpinghand">Helping Hand</a></li>
+                                        <li><a href="/contact_us">Expert Panel</a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <div class="{{YUM}}search-box">  
+                                <div class="search-box">  
                                     <form name="{{YUM}}search_form" method="get" class="search_form">
                                         <input id="search" type="text" />
                                         <input type="submit" id="search-button" />
@@ -91,7 +91,7 @@ http://www.templatemo.com/preview/templatemo_417_grill
                         <div class="col-md-12">
                             <div class="heading-content">
                                 <h2>Expert Panel</h2>
-                                <span>Student Idea/ <a href="{{YUM}}contact-us.html">Expert Panel</a></span>
+                                <span>Student Idea/ <a href="/contact_us">Expert Panel</a></span>
                             </div>
                         </div>
                     </div>
@@ -118,7 +118,7 @@ http://www.templatemo.com/preview/templatemo_417_grill
                                     <div class="overlay">
                                         <div class="author-caption">
                                             <ul>
-                                                <li><a href="{{YUM}}#"><i class="fa fa-facebook"></i></a></li>
+                                                <li><a href="www.facebook.com"><i class="fa fa-facebook"></i></a></li>
                                                 <li><a href="{{YUM}}#"><i class="fa fa-twitter"></i></a></li>
                                                 <li><a href="{{YUM}}#"><i class="fa fa-linkedin"></i></a></li>
                                             </ul>
@@ -213,7 +213,8 @@ http://www.templatemo.com/preview/templatemo_417_grill
                                     <div class="row">
                                         <div class="col-md-8">  
                                             <div class="message-form">
-                                                <form action="{{YUM}}#" method="post" class="send-message">
+                                                <form action="/contact_us" method="POST" class="send-message">
+                                                {% csrf_token %}
                                                     <div class="row">
                                                     <div class="name col-md-4">
                                                         <input type="text" name="name" id="name" placeholder="Name" />
@@ -227,7 +228,7 @@ http://www.templatemo.com/preview/templatemo_417_grill
                                                     </div>
                                                     <div class="row">        
                                                         <div class="text col-md-12">
-                                                            <textarea name="text" placeholder="Message"></textarea>
+                                                            <textarea name="message" placeholder="Message"></textarea>
                                                         </div>   
                                                     </div>                              
                                                     <div class="send">
@@ -306,12 +307,12 @@ http://www.templatemo.com/preview/templatemo_417_grill
                                 <div class="shop-list">
                                     <h4 class="footer-title">Shop Categories</h4>
                                     <ul>
-                                         <li><a href="{{YUM}}project_detail.html"><i class="fa fa-angle-right"></i>BCA Projects</a></li>
-                                        <li><a href="{{YUM}}project_mca.html"><i class="fa fa-angle-right"></i>MCA Projects</a></li>
-                                        <li><a href="{{YUM}}project_btech.html"><i class="fa fa-angle-right"></i>B.Tech Projects</a></li>
-                                        <li><a href="{{YUM}}project_res.html"><i class="fa fa-angle-right"></i>Research Projects</a></li>
-                                        <li><a href="{{YUM}}project_mtech.html"><i class="fa fa-angle-right"></i>M.Tech Projects</a></li>
-                                        <li><a href="{{YUM}}project_bsc.html"><i class="fa fa-angle-right"></i>B.Sc(Comp. Sci.) Projects</a></li>
+                                         <li><a href="/project_detail"><i class="fa fa-angle-right"></i>BCA Projects</a></li>
+                                        <li><a href="/project_mca"><i class="fa fa-angle-right"></i>MCA Projects</a></li>
+                                        <li><a href="/project_btech"><i class="fa fa-angle-right"></i>B.Tech Projects</a></li>
+                                        <li><a href="/project_res"><i class="fa fa-angle-right"></i>Research Projects</a></li>
+                                        <li><a href="/project_mtech"><i class="fa fa-angle-right"></i>M.Tech Projects</a></li>
+                                        <li><a href="/project_bsc"><i class="fa fa-angle-right"></i>B.Sc(Comp. Sci.) Projects</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -352,7 +353,7 @@ http://www.templatemo.com/preview/templatemo_417_grill
                         </div>
                     </div>
                     <div class="bottom-footer">
-                        <p>Copyright © 2015 <a href="{{YUM}}#">Project Idea</a></p>
+                        <p>Copyright © 2015 <a href="/">Project Idea</a></p>
                     </div>
                     
                 </div>

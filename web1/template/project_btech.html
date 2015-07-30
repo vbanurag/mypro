@@ -1,30 +1,29 @@
+
+{% load static %}
+{%get_static_prefix as RES %}
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 
-<!-- templatemo 417 grill -->
-<!-- 
-Grill Template 
-http://www.templatemo.com/preview/templatemo_417_grill 
--->
+
     <head>
         <meta charset="utf-8">
         <title>Expert Panel</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+        <link href='{{RES}}http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/font-awesome.css">
-        <link rel="stylesheet" href="css/templatemo_style.css">
-        <link rel="stylesheet" href="css/templatemo_misc.css">
-        <link rel="stylesheet" href="css/flexslider.css">
-        <link rel="stylesheet" href="css/testimonails-slider.css">
+        <link rel="stylesheet" href="{{RES}}css/bootstrap.css">
+        <link rel="stylesheet" href="{{RES}}css/font-awesome.css">
+        <link rel="stylesheet" href="{{RES}}css/templatemo_style.css">
+        <link rel="stylesheet" href="{{RES}}css/templatemo_misc.css">
+        <link rel="stylesheet" href="{{RES}}css/flexslider.css">
+        <link rel="stylesheet" href="{{RES}}css/testimonails-slider.css">
 
-        <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+        <script src="{{RES}}js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -37,8 +36,8 @@ http://www.templatemo.com/preview/templatemo_417_grill
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="home-account">
-                                    <a href="login.html">Login</a>
-                                    <a href="signup.html">Register</a>
+                                    <a href="/login_project">Login</a>
+                                    <a href="/signup">Register</a>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -55,17 +54,17 @@ http://www.templatemo.com/preview/templatemo_417_grill
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="logo">
-                                    <a href="#"><img src="images/logo_new.png" title="Student Idea" alt="" ></a>
+                                    <a href="/"><img src="{{RES}}images/logo_new.png" title="Student Idea" alt="" ></a>
                                 </div>
                             </div>
                             <div class="col-md-7">
                                 <div class="main-menu">
                                     <ul>
-                                        <li><a href="index.html">Home</a></li>
-                                        <li><a href="project.html">Project</a></li>
-                                        <li><a href="#">Batti Jalao !!</a></li>
-                                        <li><a href="helpinghand.html">Helping Hand</a></li>
-                                        <li><a href="contact-us.html">Expert Panel</a></li>
+                                        <li><a href="/">Home</a></li>
+                                        <li><a href="/project">Project</a></li>
+                                        <li><a href="/battijalao">Batti Jalao !!</a></li>
+                                        <li><a href="/helpinghand">Helping Hand</a></li>
+                                        <li><a href="/contact_us">Expert Panel</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -89,7 +88,7 @@ http://www.templatemo.com/preview/templatemo_417_grill
                         <div class="col-md-12">
                             <div class="heading-content">
                                 <h2>Projects</h2>
-                                <span>Undergraduate/ <a href="project_btech.html">B.Tech</a></span>
+                                <span>Undergraduate/ <a href="/project_btech">B.Tech</a></span>
                             </div>
                         </div>
                     </div>
@@ -105,7 +104,7 @@ http://www.templatemo.com/preview/templatemo_417_grill
                     <small>B.Tech</small>
                 </h1>
                 <ol class="breadcrumb">
-                    <li><a href="index.html">Home</a>
+                    <li><a href="/">Home</a>
                     </li>
                     <li class="active">B.Tech</li>
                 </ol>
@@ -118,97 +117,27 @@ http://www.templatemo.com/preview/templatemo_417_grill
         <!-- Page Heading/Breadcrumbs -->
         
         <!-- /.row -->
-
+{% for i in pro_btech %}
         <!-- Project One -->
         <div class="row">
             <div class="col-md-7">
                 <a href="portfolio-item.html">
-                    <img class="img-responsive img-hover" src="http://placehold.it/700x300" alt="">
+                    <img class="img-responsive img-hover" src="{{i.project.project_image.url}}" width="400" alt="">
                 </a>
             </div>
             <div class="col-md-5">
-                <h3>Project One</h3>
-                <h4>Subheading</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-                <a class="btn btn-primary" href="portfolio-item.html">View Project</i></a>
+                <h3>{{i.project.project_title}}</h3>
+                <h4>Platform: {{i.project.project_class}}</h4>
+                <p>{{i.project.project_desc}}</p>
+                <a class="btn btn-primary" href="/detailug/{{i.id}}">View Project</i></a>
             </div>
         </div>
         <!-- /.row -->
 
         <hr>
+{% endfor %}
 
-        <!-- Project Two -->
-        <div class="row">
-            <div class="col-md-7">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-hover" src="http://placehold.it/700x300" alt="">
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h3>Project Two</h3>
-                <h4>Subheading</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, odit velit cumque vero doloremque repellendus distinctio maiores rem expedita a nam vitae modi quidem similique ducimus! Velit, esse totam tempore.</p>
-                <a class="btn btn-primary" href="portfolio-item.html">View Project</i></a>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <hr>
-
-        <!-- Project Three -->
-        <div class="row">
-            <div class="col-md-7">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-hover" src="http://placehold.it/700x300" alt="">
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h3>Project Three</h3>
-                <h4>Subheading</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, temporibus, dolores, at, praesentium ut unde repudiandae voluptatum sit ab debitis suscipit fugiat natus velit excepturi amet commodi deleniti alias possimus!</p>
-                <a class="btn btn-primary" href="portfolio-item.html">View Project</i></a>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <hr>
-
-        <!-- Project Four -->
-        <div class="row">
-
-            <div class="col-md-7">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-hover" src="http://placehold.it/700x300" alt="">
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h3>Project Four</h3>
-                <h4>Subheading</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, quidem, consectetur, officia rem officiis illum aliquam perspiciatis aspernatur quod modi hic nemo qui soluta aut eius fugit quam in suscipit?</p>
-                <a class="btn btn-primary" href="portfolio-item.html">View Project</i></a>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <hr>
-
-        <!-- Project Five -->
-        <div class="row">
-            <div class="col-md-7">
-                <a href="#">
-                    <img class="img-responsive img-hover" src="http://placehold.it/700x300" alt="">
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h3>Project Five</h3>
-                <h4>Subheading</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, quo, minima, inventore voluptatum saepe quos nostrum provident ex quisquam hic odio repellendus atque porro distinctio quae id laboriosam facilis dolorum.</p>
-                <a class="btn btn-primary" href="#">View Project</i></a>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <hr>
+        
 
         <!-- Pagination -->
         <div class="row text-center">
@@ -220,18 +149,7 @@ http://www.templatemo.com/preview/templatemo_417_grill
                     <li class="active">
                         <a href="#">1</a>
                     </li>
-                    <li>
-                        <a href="#">2</a>
-                    </li>
-                    <li>
-                        <a href="#">3</a>
-                    </li>
-                    <li>
-                        <a href="#">4</a>
-                    </li>
-                    <li>
-                        <a href="#">5</a>
-                    </li>
+                  
                     <li>
                         <a href="#">&raquo;</a>
                     </li>
@@ -353,12 +271,12 @@ http://www.templatemo.com/preview/templatemo_417_grill
                                 <div class="shop-list">
                                     <h4 class="footer-title">Shop Categories</h4>
                                     <ul>
-                                         <li><a href="project_detail.html"><i class="fa fa-angle-right"></i>BCA Projects</a></li>
-                                        <li><a href="project_mca.html"><i class="fa fa-angle-right"></i>MCA Projects</a></li>
-                                        <li><a href="project_btech.html"><i class="fa fa-angle-right"></i>B.Tech Projects</a></li>
-                                        <li><a href="project_res.html"><i class="fa fa-angle-right"></i>Research Projects</a></li>
-                                        <li><a href="project_mtech.html"><i class="fa fa-angle-right"></i>M.Tech Projects</a></li>
-                                        <li><a href="project_bsc.html"><i class="fa fa-angle-right"></i>B.Sc(Comp. Sci.) Projects</a></li>
+                                         <li><a href="/project_detail"><i class="fa fa-angle-right"></i>BCA Projects</a></li>
+                                        <li><a href="/project_mca"><i class="fa fa-angle-right"></i>MCA Projects</a></li>
+                                        <li><a href="/project_btech"><i class="fa fa-angle-right"></i>B.Tech Projects</a></li>
+                                        <li><a href="/project_res"><i class="fa fa-angle-right"></i>Research Projects</a></li>
+                                        <li><a href="/project_mtech"><i class="fa fa-angle-right"></i>M.Tech Projects</a></li>
+                                        <li><a href="/project_bsc"><i class="fa fa-angle-right"></i>B.Sc(Comp. Sci.) Projects</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -367,7 +285,7 @@ http://www.templatemo.com/preview/templatemo_417_grill
                                     <h4 class="footer-title">Recent Posts</h4>
                                     <div class="recent-post">
                                         <div class="recent-post-thumb">
-                                            <img src="images/Matlab_Logo_recent.png" alt="">
+                                            <img src="{{RES}}images/Matlab_Logo_recent.png" alt="">
                                         </div>
                                         <div class="recent-post-info">
                                             <h6><a href="#">Matlab</a></h6>
@@ -376,7 +294,7 @@ http://www.templatemo.com/preview/templatemo_417_grill
                                     </div>
                                     <div class="recent-post">
                                         <div class="recent-post-thumb">
-                                            <img src="images/qu_recent.jpg" alt="">
+                                            <img src="{{RES}}images/qu_recent.jpg" alt="">
                                         </div>
                                         <div class="recent-post-info">
                                             <h6><a href="#">Quantum Computing</a></h6>
@@ -399,17 +317,17 @@ http://www.templatemo.com/preview/templatemo_417_grill
                         </div>
                     </div>
                     <div class="bottom-footer">
-                        <p>Copyright © 2015 <a href="#">Project Idea</a></p>
+                        <p>Copyright © 2015 <a href="/">Project Idea</a></p>
                     </div>
                     
                 </div>
             </footer>
-        <script src="js/vendor/jquery-1.11.0.min.js"></script>
-        <script src="js/vendor/jquery.gmap3.min.js"></script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        <script src="{{RES}}js/vendor/jquery-1.11.0.min.js"></script>
+        <script src="{{RES}}js/vendor/jquery.gmap3.min.js"></script>
+        <script src="{{RES}}js/plugins.js"></script>
+        <script src="{{RES}}js/main.js"></script>
 
-        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&amp;sensor=false">
+        <script src="{{RES}}http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&amp;sensor=false">
         </script>
                 
         <script>

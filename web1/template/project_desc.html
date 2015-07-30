@@ -67,8 +67,8 @@ http://www.templatemo.com/preview/templatemo_417_grill
                                         <li><a href="/">Home</a></li>
                                         <li><a href="/project">Project</a></li>
                                         <li><a href="/battijalao">Batti Jalao !!</a></li>
-                                        <li><a href="helpinghand.html">Helping Hand</a></li>
-                                        <li><a href="contact-us.html">Expert Panel</a></li>
+                                        <li><a href="/helpinghand">Helping Hand</a></li>
+                                        <li><a href="/contact_us">Expert Panel</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -95,7 +95,7 @@ http://www.templatemo.com/preview/templatemo_417_grill
 
                 <div class="list-group">
             
-                    <a href="{{ i.id }}" class="list-group-item active">Project-{{i.id}} </a>
+                    <a href="{{i.id}}" class="list-group-item active">Project-{{i.id}} </a>
                 </div>
 
             {% endfor %}
@@ -103,13 +103,13 @@ http://www.templatemo.com/preview/templatemo_417_grill
 
 
  
-
+            {% for i in pro_mca %}
             <div class="col-md-9">
 
                 <div class="thumbnail">
                     <img class="img-responsive" src="{{ i.project.project_image.url }}" alt="">
                     <div class="caption-full">
-                        <h4 class="pull-right">24.99</h4>
+                        
 
                         <h4 ><a href="{{i.project.project_id}}">{{i.project.project_title}}</a>
                         </h4>
@@ -117,7 +117,7 @@ http://www.templatemo.com/preview/templatemo_417_grill
                         <p>{{i.project.project_desc}}</p>
                     </div>
                     
-                    <h4 class="btn btn-primary">Buy Now</h4>
+                    <h4 class="btn btn-primary">Join Team</h4>
                 </div>
 
                 
@@ -126,7 +126,7 @@ http://www.templatemo.com/preview/templatemo_417_grill
 
             
                     
-                      
+                {% endfor %}      
 
                 </div>
        

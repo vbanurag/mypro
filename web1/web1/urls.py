@@ -24,16 +24,13 @@ urlpatterns = [
     
     url(r'^media/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.MEDIA_ROOT,"show_indexes":False}),
     
-    url(r'^aboutus$', 'web1.views.aboutus', name='aboutus'),
-    url(r'^blog$', 'web1.views.blog', name='blog'),
-    url(r'^foer$', 'web1.views.foer', name='foer'),
-    url(r'^forms$', 'web1.views.forms', name='forms'),
-    url(r'^formsubmit/$', 'web1.views.formsubmit', name='formsubmit'),
-    url(r'^form1$', 'web1.views.form1', name='form1'),
-    url(r'^formsubmit1/$', 'web1.views.formsubmit1', name='formsubmit1'),
     
-    url(r'^value/(?P<myval>\d+)$','web1.views.display',name='display'),
-    url(r'^project_mca$', 'web1.views.project_mca', name='project_mca'),
+    
+    url(r'^foer$', 'web1.views.foer', name='foer'),
+   
+    
+    
+    
     
 
     url(r'^$', 'web1.views.home', name='home'),
@@ -42,16 +39,20 @@ urlpatterns = [
     url(r'^signup$', 'web1.views.user_signup', name='user_signup'),
     url(r'^login_project$', 'web1.views.login_project', name='login_project'),
     url(r'^user_page$', 'web1.views.user_page', name='user_page'),
+
+
     
     url(r'^project$', 'web1.views.project', name='project'),
-    
     url(r'^project_res$', 'web1.views.project_res', name='project_res'),
     url(r'^project_mtech$', 'web1.views.project_mtech', name='project_mtech'),
     url(r'^project_mca$', 'web1.views.project_mca', name='project_mca'),
-    #url(r'^helpinghand$', 'web1.views.helpinghand', name='helpinghand'),
+    url(r'^project_detail$', 'web1.views.project_detail', name='project_detail'),
+    url(r'^project_bsc$', 'web1.views.project_bsc', name='project_bsc'),
+    url(r'^project_btech$', 'web1.views.project_btech', name='project_btech'),
 
-    url(r'^project_desc/(?P<myvalue>/d+)$', 'web1.views.project_desc', name='project_desc'),
-
+    url(r'^detail/(?P<myvalue>\d+)/$', 'web1.views.project_desc', name='project_desc'),
+    url(r'^detailug/(?P<myvalue>\d+)/$', 'web1.views.project_desc_undergrad', name='project_desc_undergrad'),
+    url(r'^detailri/(?P<myvalue>\d+)/$', 'web1.views.project_desc_ri', name='project_desc_ri'),
     #for dynamically displaying the projects
 
     #url(r'^detail/(?P<t_id>\d+)$', 'web1.views.project_dislpay', name='project_display'),
@@ -60,7 +61,7 @@ urlpatterns = [
     url(r'^helpinghand$', 'web1.views.helpinghand_form', name='helpinghand_form'),
     url(r'^battijalao$', 'web1.views.battijalao_form', name='battijalao_form'),
 
-    
+    url(r'^contact_us$', 'web1.views.contact_us', name='contact-us'),
     
     # url(r'^search/$', include('haystack.urls')),
 

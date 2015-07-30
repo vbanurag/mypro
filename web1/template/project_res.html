@@ -50,7 +50,7 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="logo">
-                                    <a href="{{RES}}/"><img src="{{RES}}images/logo_new.png" title="Student Idea" alt="" ></a>
+                                    <a href="/"><img src="{{RES}}images/logo_new.png" title="Student Idea" alt="" ></a>
                                 </div>
                             </div>
                             <div class="col-md-7">
@@ -60,7 +60,7 @@
                                         <li><a href="/project">Project</a></li>
                                         <li><a href="/battijalao">Batti Jalao !!</a></li>
                                         <li><a href="/helpinghand">Helping Hand</a></li>
-                                        <li><a href="{{RES}}contact-us.html">Expert Panel</a></li>
+                                        <li><a href="/contact_us">Expert Panel</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -84,7 +84,7 @@
                         <div class="col-md-12">
                             <div class="heading-content">
                                 <h2>Projects</h2>
-                                <span>Innovation/ <a href="{{RES}}project_res.html">Research</a></span>
+                                <span>Innovation/ <a href="/project_res">Research</a></span>
                             </div>
                         </div>
                     </div>
@@ -100,7 +100,7 @@
                     <small>Research</small>
                 </h1>
                 <ol class="breadcrumb">
-                    <li><a href="{{RES}}index.html">Home</a>
+                    <li><a href="/">Home</a>
                     </li>
                     <li class="active">Research</li>
                 </ol>
@@ -113,98 +113,27 @@
         <!-- Page Heading/Breadcrumbs -->
         
         <!-- /.row -->
-
+{% for i in pro_mca %}
         <!-- Project One -->
         <div class="row">
             <div class="col-md-7">
                 <a href="portfolio-item.html">
-                    <img class="img-responsive img-hover" src="{{RES}}http://placehold.it/700x300" alt="">
+                    <img class="img-responsive img-hover" src="{{i.project.project_image.url}}" alt="">
                 </a>
             </div>
             <div class="col-md-5">
-                <h3>Project One</h3>
-                <h4>Subheading</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-                <a class="btn btn-primary" href="{{RES}}portfolio-item.html">View Project</i></a>
+                <h3>{{i.project.project_title}}</h3>
+                <h4>Field: {{i.project.project_class}}</h4>
+                <p>{{i.project.project_desc}}</p>
+                <a class="btn btn-primary" href="/detailri/{{i.id}}">View Project</i></a>
             </div>
         </div>
         <!-- /.row -->
 
         <hr>
+    {% endfor %}
 
-        <!-- Project Two -->
-        <div class="row">
-            <div class="col-md-7">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-hover" src="{{RES}}http://placehold.it/700x300" alt="">
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h3>Project Two</h3>
-                <h4>Subheading</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, odit velit cumque vero doloremque repellendus distinctio maiores rem expedita a nam vitae modi quidem similique ducimus! Velit, esse totam tempore.</p>
-                <a class="btn btn-primary" href="{{RES}}portfolio-item.html">View Project</i></a>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <hr>
-
-        <!-- Project Three -->
-        <div class="row">
-            <div class="col-md-7">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-hover" src="{{RES}}http://placehold.it/700x300" alt="">
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h3>Project Three</h3>
-                <h4>Subheading</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, temporibus, dolores, at, praesentium ut unde repudiandae voluptatum sit ab debitis suscipit fugiat natus velit excepturi amet commodi deleniti alias possimus!</p>
-                <a class="btn btn-primary" href="{{RES}}portfolio-item.html">View Project</i></a>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <hr>
-
-        <!-- Project Four -->
-        <div class="row">
-
-            <div class="col-md-7">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-hover" src="{{RES}}http://placehold.it/700x300" alt="">
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h3>Project Four</h3>
-                <h4>Subheading</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, quidem, consectetur, officia rem officiis illum aliquam perspiciatis aspernatur quod modi hic nemo qui soluta aut eius fugit quam in suscipit?</p>
-                <a class="btn btn-primary" href="{{RES}}portfolio-item.html">View Project</i></a>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <hr>
-
-        <!-- Project Five -->
-        <div class="row">
-            <div class="col-md-7">
-                <a href="#">
-                    <img class="img-responsive img-hover" src="{{RES}}http://placehold.it/700x300" alt="">
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h3>Project Five</h3>
-                <h4>Subheading</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, quo, minima, inventore voluptatum saepe quos nostrum provident ex quisquam hic odio repellendus atque porro distinctio quae id laboriosam facilis dolorum.</p>
-                <a class="btn btn-primary" href="{{RES}}#">View Project</i></a>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <hr>
-
+       
         <!-- Pagination -->
         <div class="row text-center">
             <div class="col-lg-12">
@@ -215,18 +144,7 @@
                     <li class="active">
                         <a href="#">1</a>
                     </li>
-                    <li>
-                        <a href="#">2</a>
-                    </li>
-                    <li>
-                        <a href="#">3</a>
-                    </li>
-                    <li>
-                        <a href="#">4</a>
-                    </li>
-                    <li>
-                        <a href="#">5</a>
-                    </li>
+                 
                     <li>
                         <a href="#">&raquo;</a>
                     </li>
@@ -348,12 +266,12 @@
                                 <div class="shop-list">
                                     <h4 class="footer-title">Shop Categories</h4>
                                     <ul>
-                                         <li><a href="{{RES}}project_detail.html"><i class="fa fa-angle-right"></i>BCA Projects</a></li>
-                                        <li><a href="{{RES}}project_mca.html"><i class="fa fa-angle-right"></i>MCA Projects</a></li>
-                                        <li><a href="{{RES}}project_btech.html"><i class="fa fa-angle-right"></i>B.Tech Projects</a></li>
-                                        <li><a href="{{RES}}project_res.html"><i class="fa fa-angle-right"></i>Research Projects</a></li>
-                                        <li><a href="{{RES}}project_mtech.html"><i class="fa fa-angle-right"></i>M.Tech Projects</a></li>
-                                        <li><a href="{{RES}}project_bsc.html"><i class="fa fa-angle-right"></i>B.Sc(Comp. Sci.) Projects</a></li>
+                                         <li><a href="/project_detail"><i class="fa fa-angle-right"></i>BCA Projects</a></li>
+                                        <li><a href="/project_mca"><i class="fa fa-angle-right"></i>MCA Projects</a></li>
+                                        <li><a href="/project_btech"><i class="fa fa-angle-right"></i>B.Tech Projects</a></li>
+                                        <li><a href="/project_res"><i class="fa fa-angle-right"></i>Research Projects</a></li>
+                                        <li><a href="/project_mtech"><i class="fa fa-angle-right"></i>M.Tech Projects</a></li>
+                                        <li><a href="/project_bsc"><i class="fa fa-angle-right"></i>B.Sc(Comp. Sci.) Projects</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -387,14 +305,14 @@
                                     <ul>
                                         <li><i class="fa fa-phone"></i>091-111-000-454</li>
                                         <li><i class="fa fa-globe"></i>123, Gurgaon, Haryana</li>
-                                        <li><i class="fa fa-envelope"></i><a href="{{RES}}contact-us.html">info@projectidea.com</a></li>
+                                        <li><i class="fa fa-envelope"></i><a href="#">info@projectidea.com</a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="bottom-footer">
-                        <p>Copyright © 2015 <a href="{{RES}}index.html">Project Idea</a></p>
+                        <p>Copyright © 2015 <a href="/">Project Idea</a></p>
                     </div>
                     
                 </div>
