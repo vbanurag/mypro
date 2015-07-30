@@ -1,0 +1,367 @@
+
+{% load static %}
+{%get_static_prefix as YUM %}
+
+<!DOCTYPE html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>Expert Panel</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="{{YUM}}css/bootstrap.css">
+        <link rel="stylesheet" href="{{YUM}}css/font-awesome.css">
+        <link rel="stylesheet" href="{{YUM}}css/templatemo_style.css">
+        <link rel="stylesheet" href="{{YUM}}css/templatemo_misc.css">
+        <link rel="stylesheet" href="{{YUM}}css/flexslider.css">
+        <link rel="stylesheet" href="{{YUM}}css/testimonails-slider.css">
+
+        <script src="{{YUM}}js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+            <header>
+                <div id="top-header">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="home-account">
+                                    <a href="/login_project">Login</a>
+                                    <a href="/signup">Register</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="cart-info">
+                                    <i class="fa fa-shopping-cart"></i>
+                                    <a href="#">Limited Offer !! Grab Your Project at Rs.1000</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="main-header">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="logo">
+                                    <a href="/"><img src="{{YUM}}images/logo_new.png" title="Student Idea" alt="" ></a>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="main-menu">
+                                    <ul>
+                                        <li><a href="/">Home</a></li>
+                                        <li><a href="/project">Project</a></li>
+                                        <li><a href="/battijalao">Batti Jalao !!</a></li>
+                                        <li><a href="/helpinghand">Helping Hand</a></li>
+                                        <li><a href="contact-us.html">Expert Panel</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="search-box">  
+                                    <form name="search_form" method="get" class="search_form">
+                                        <input id="search" type="text" />
+                                        <input type="submit" id="search-button" />
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+
+            <div id="heading">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="heading-content">
+                                <h2>Projects</h2>
+                                <span>Postgraduate/ <a href="/project_mtech">M.Tech</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    <div class="container">
+
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Projects
+                    <small>M.Tech</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="/project_mtech">Home</a>
+                    </li>
+                    <li class="active">M.Tech</li>
+                </ol>
+            </div>
+        </div>
+        <!-- /.row -->
+
+     <div class="container">
+
+        <!-- Page Heading/Breadcrumbs -->
+        
+        <!-- /.row -->
+{% for i in pro_mtech %}
+
+
+        <!-- Project One -->
+        <div class="row">
+            <div class="col-md-7">
+                <a href="{{YUM}}portfolio-item.html">
+                    <img class="img-responsive img-hover" src="{{i.project.project_image.url}}" alt="">
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3> {{i.project.project_title}}</h3>
+                <h4>Platform: {{i.project.project_class}}</h4>
+                <p>Project Synopsis: {{i.project.project_desc}} </p>
+                <a class="btn btn-primary" href="{{YUM}}portfolio-item.html">View Project</i></a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+  {% endfor %}
+
+       
+
+        <!-- Pagination -->
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <ul class="pagination">
+                    <li>
+                        <a href="#">&laquo;</a>
+                    </li>
+                    <li class="active">
+                        <a href="#">1</a>
+                    </li>
+                    <li>
+                        <a href="#">2</a>
+                    </li>
+                    <li>
+                        <a href="#">3</a>
+                    </li>
+                    <li>
+                        <a href="#">4</a>
+                    </li>
+                    <li>
+                        <a href="#">5</a>
+                    </li>
+                    <li>
+                        <a href="#">&raquo;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+</div>
+</hr>
+<!--
+            <div id="product-post">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="heading-section">
+                                <h2>Feel free to send a message</h2>
+                                <img src="images/un.png" alt="" >
+                            </div>
+                        </div>
+                    </div>
+                    <div id="contact-us">
+                        <div class="container">
+                            <div class="row">
+                                <div class="product-item col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-8">  
+                                            <div class="message-form">
+                                                <form action="#" method="post" class="send-message">
+                                                    <div class="row">
+                                                    <div class="name col-md-4">
+                                                        <input type="text" name="name" id="name" placeholder="Name" />
+                                                    </div>
+                                                    <div class="email col-md-4">
+                                                        <input type="text" name="email" id="email" placeholder="Email" />
+                                                    </div>
+                                                    <div class="subject col-md-4">
+                                                        <input type="text" name="subject" id="subject" placeholder="Subject" />
+                                                    </div>
+                                                    </div>
+                                                    <div class="row">        
+                                                        <div class="text col-md-12">
+                                                            <textarea name="text" placeholder="Message"></textarea>
+                                                        </div>   
+                                                    </div>                              
+                                                    <div class="send">
+                                                        <button type="submit">Send</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="info">
+                                                <p>Student Idea team is always available to help you and ready to support you at every step of your project.</p>
+                                                <ul>
+                                                    <li><i class="fa fa-phone"></i>091-111-000-454</li>
+                                                    <li><i class="fa fa-globe"></i>123, Gurgaon, Haryana</li>
+                                                    <li><i class="fa fa-envelope"></i><a href="#">info@studentidea.com</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="heading-section">
+                                <h2>Find Us On Map</h2>
+                                <img src="images/un.png" alt="" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="googleMap" style="height:420px;"></div>
+                        </div>
+                    </div>     
+                </div>
+            </div>
+-->
+</div>
+
+            <footer>
+                <div class="container">
+                    <div class="top-footer">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="subscribe-form">
+                                    <span>Get in touch with us</span>
+                                    <form method="get" class="subscribeForm">
+                                        <input id="subscribe" type="text" />
+                                        <input type="submit" id="submitButton" />
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="social-bottom">
+                                    <span>Follow us:</span>
+                                    <ul>
+                                        <li><a href="www.facebook.com" class="fa fa-facebook"></a></li>
+                                        <li><a href="www.twitter.com" class="fa fa-twitter"></a></li>
+                                        <li><a href="#" class="fa fa-rss"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-footer">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="about">
+                                    <h4 class="footer-title">About Student Idea</h4>
+                                    <p><span class="blue">Student</span><span class="green"> Idea</span> is a concept in which we helps student to complete their projects and also helps young minds who wants to start their venture.
+                                    <br><br>Student Idea is starts by <span class ="blue">Anurag Sharma</span> and<span class="green"> Rishika Kalsi </span>Now she is Vice President of Student Idea.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="shop-list">
+                                    <h4 class="footer-title">Shop Categories</h4>
+                                    <ul>
+                                         <li><a href="/project_detail"><i class="fa fa-angle-right"></i>BCA Projects</a></li>
+                                        <li><a href="/project_mca"><i class="fa fa-angle-right"></i>MCA Projects</a></li>
+                                        <li><a href="/project_btech"><i class="fa fa-angle-right"></i>B.Tech Projects</a></li>
+                                        <li><a href="/project_res"><i class="fa fa-angle-right"></i>Research Projects</a></li>
+                                        <li><a href="/project_mtech"><i class="fa fa-angle-right"></i>M.Tech Projects</a></li>
+                                        <li><a href="/project_bsc"><i class="fa fa-angle-right"></i>B.Sc(Comp. Sci.) Projects</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="recent-posts">
+                                    <h4 class="footer-title">Recent Posts</h4>
+                                    <div class="recent-post">
+                                        <div class="recent-post-thumb">
+                                            <img src="{{YUM}}images/Matlab_Logo_recent.png" alt="">
+                                        </div>
+                                        <div class="recent-post-info">
+                                            <h6><a href="#">Matlab</a></h6>
+                                            <span>24/12/2084</span>
+                                        </div>
+                                    </div>
+                                    <div class="recent-post">
+                                        <div class="recent-post-thumb">
+                                            <img src="{{YUM}}images/qu_recent.jpg" alt="">
+                                        </div>
+                                        <div class="recent-post-info">
+                                            <h6><a href="#">Quantum Computing</a></h6>
+                                            <span>18/12/2084</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="more-info">
+                                    <h4 class="footer-title">More info</h4>
+                                    <p>For further information Call us or Drop an email .</p>
+                                    <ul>
+                                        <li><i class="fa fa-phone"></i>091-111-000-454</li>
+                                        <li><i class="fa fa-globe"></i>123, Gurgaon, Haryana</li>
+                                        <li><i class="fa fa-envelope"></i><a href="#">info@projectidea.com</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom-footer">
+                        <p>Copyright © 2015 <a href="/">Project Idea</a></p>
+                    </div>
+                    
+                </div>
+            </footer>
+        <script src="{{YUM}}js/vendor/jquery-1.11.0.min.js"></script>
+        <script src="{{YUM}}js/vendor/jquery.gmap3.min.js"></script>
+        <script src="{{YUM}}js/plugins.js"></script>
+        <script src="{{YUM}}js/main.js"></script>
+
+        <script src="{{YUM}}http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&amp;sensor=false">
+        </script>
+                
+        <script>
+		
+		var map;
+		
+        function initialize()
+        {
+			var map_options = {
+			  center: new google.maps.LatLng(16.8496189,96.1288854),
+			  zoom: 15,
+			  mapTypeId:google.maps.MapTypeId.ROADMAP
+			  };
+			var map = new google.maps.Map(document.getElementById("googleMap"), map_options);
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+		google.maps.event.addDomListener(window, "resize", function() 
+		{
+		 	var center = map.getCenter();
+		 	google.maps.event.trigger(map, "resize");
+		 	map.setCenter(center); 
+		});
+        </script>
+
+    </body>
+</html>
